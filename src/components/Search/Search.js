@@ -12,10 +12,10 @@ function Search() {
                     <input type="text" className={classes.search__input}/>
                 </div>
                 <div>
-                    <Select options={['All','720','1080','2160']} type="Quality:" />
+                    <Select  options={['All','720','1080','2160']} type="Quality:" />
                 </div>
                 <div>
-                    <Select options={['All','Action','Adventure','Animation']} type="Genre:" />
+                    <Select  options={['All','Action','Adventure','Animation']} type="Genre:" />
                 </div>
                 <div>
                     <Select options={['All','9+','8+','7+']} type="Rating:" />

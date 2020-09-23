@@ -7,12 +7,20 @@ import starImg from '../../assets/images/star.svg';
 import Upcoming from '../../components/Homepage/Upcoming/Upcoming';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
+import { getAllMovies as actionCreators } from '../../store/actions/getAllMovies';
 
 class Homepage extends React.Component {
 
-    render() {
-        console.log(this.props.allMovies)
+    componentDidMount() {
+        if(this.props.allMovies.movies.length === 0) {
+            this.props.getMovies()
 
+        }        
+    }
+
+    render() {
+        
+        
         return (
             <div className={classes.homepage}>
                 
@@ -62,8 +70,15 @@ class Homepage extends React.Component {
 
 const mapStateToProps = (state) => {
     return {
-        allMovies: state.allMovies
+        allMovies: state.allMovies,
+        
     }
 }
 
-export default connect(mapStateToProps)(Homepage);
+const mapDispatchToProps = dispatch => {
+    return {
+        getMovies: () => dispatch(actionCreators())
+    }
+}
+
+export default connect(mapStateToProps,mapDispatchToProps)(Homepage);

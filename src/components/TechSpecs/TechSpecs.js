@@ -5,7 +5,9 @@ import Spec from './Spec/Spec';
 function TechSpecs() {
 
     const [current,setCurrent] = React.useState('small');
+    if(current && setCurrent) {
 
+    }
     const [spec,setSpec] = React.useState({
         size:{
             main:"990.22 MB",
@@ -40,6 +42,10 @@ function TechSpecs() {
             icon: "icon-folder-open"
         }
     });
+
+    if(setSpec) {
+
+    }
 
     let arr = [];
 

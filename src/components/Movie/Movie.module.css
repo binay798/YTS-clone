@@ -24,6 +24,7 @@
     height: 100%;
     width: 100%;
     object-fit: cover;
+    object-position: top;
 }
 .movie:hover .movie__container {
     border: 5px solid var(--color-green);
