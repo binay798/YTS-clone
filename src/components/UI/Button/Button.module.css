@@ -1,0 +1,17 @@
+.btn {
+    background-color: var(--color-green);
+    padding: .7rem 0;
+    font-weight: 700;
+    color: var(--color-light);
+    border: none;
+    border-radius: 3px;
+    width: 13rem;
+    text-align: center;
+    font-size: 1.6rem;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.btn:hover {
+    background-color: #5da93c;
+}

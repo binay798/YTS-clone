@@ -1,0 +1,51 @@
+.techSpecs {
+
+}
+
+.techSpecs__header {
+    display: flex;
+    align-items: center;
+}
+
+.techSpecs__header h3 {
+    color: var(--color-light);
+    font-weight: 700;
+    
+    padding: 1rem 2rem;
+}
+
+.techSpecs__header > div {
+    display: flex;
+    color: var(--color-light);
+    margin-left: 30%;
+}
+
+.active {
+    background-color: #171717;
+    border-radius: 8px 8px 0 0;
+    font-weight: 700;
+    color: #fff !important;
+}
+
+.techSpecs__header > div > p {
+    padding: 1rem 2rem;
+    cursor: pointer;
+    transition: .3s;
+    color: var(--color-gray);
+}
+
+.techSpecs__header > div > p:hover {
+    color: #fff;
+}
+
+.techSpecs__container {
+    width: 100%;
+    border-radius: 4px;
+    background-color: #171717;
+    margin-top: -.5rem;
+    padding: 4rem 8rem;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(25rem,1fr));
+    grid-row-gap: 2rem;
+}

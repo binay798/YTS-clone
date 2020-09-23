@@ -1,0 +1,17 @@
+.spec {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.spec > svg {
+    width: 2rem;
+    height: 2rem;
+    fill: #919191;
+    margin-right: 1rem;
+}
+
+
+.spec p {
+    color: var(--color-gray);
+}

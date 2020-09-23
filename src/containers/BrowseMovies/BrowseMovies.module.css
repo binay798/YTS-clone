@@ -1,0 +1,32 @@
+.browse {
+
+}
+
+.browse__search {
+    /* height: 10rem; */
+    background-color: #171717;
+    padding: 3rem 18rem;
+}
+
+.browse__movies {
+    
+    background-color: #1D1D1D;
+    padding: 3rem 7rem;
+}
+
+.browse__movies > h3 {
+    text-align: center;
+    color: #6ac045;
+    margin-bottom: 4rem;
+}
+
+.browse__movies > h3  span {
+    font-weight: 700;
+    font-size: 2.5rem;
+}
+
+.browse__moviesContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(18rem,1fr));
+    grid-gap: 6rem;
+}

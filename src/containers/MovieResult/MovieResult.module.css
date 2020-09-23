@@ -1,0 +1,111 @@
+.movieResult {
+    
+}
+
+.movieResult__container {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr 1fr;
+    grid-column-gap: 8rem;
+    padding: 4rem 9rem;
+    background-image: linear-gradient(to bottom,
+        rgba(43, 40, 40, 0.822),
+        rgba(36, 29, 29, 0.897)),
+        url(../../assets/images/hero.jpg);
+    /* filter: blur(10px); */
+    background-repeat: no-repeat;
+    background-position: center;
+    
+    
+}
+
+.movieResult__container > div {
+    /* background-color: coral; */
+    height: 40rem;
+} 
+
+.movieResult__similar {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    
+    grid-gap: 3rem;
+}
+.movieResult__similar div {
+    width: 100%;
+    height: 100%;
+}
+
+.movieResult__image  button {
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.movieResult__image div {
+    height: 90%;
+}
+
+.movieResult__details {
+    color: var(--color-light);
+}
+
+.movieResult__details > * {
+    margin-bottom: 2rem;
+}
+
+.movieResult__availability {
+    display: flex;
+    align-items: flex-start;
+}
+
+.movieResult__availability p {
+    margin-right: 2rem;
+}
+.movieResult__availabilityContainer {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+
+    
+}
+
+
+
+.movieResult__availabilityContainerLink {
+    text-decoration: none;
+    display: inline-block;
+    border: 1px solid rgba(255,255,255,.16);
+    border-radius: 3px;
+    padding: 2px 10px;
+    color: var(--color-light);
+    font-size: 1.4rem;
+    transition: .2s;
+    margin-right: 1rem;
+}
+
+.movieResult__star {
+    display: flex;
+    align-items: center;
+}
+
+.movieResult__star img {
+    width: 2rem;
+    height: 2rem;
+    margin-left: 1rem;
+}
+
+.movieResult__likes {
+    display: grid;
+    width: 10rem;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: repeat(2,1fr);
+    grid-row-gap: 1rem;
+    grid-column-gap: 3rem;
+    align-items: center;
+    
+}
+
+
+.movieResult__techSpecs {
+    background-color: #1D1D1D;
+    padding: 4rem 9rem;
+}

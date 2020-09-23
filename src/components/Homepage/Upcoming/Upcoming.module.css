@@ -1,0 +1,33 @@
+.upcoming {
+
+}
+
+.upcoming__headContent {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.upcoming__headContent h3 {
+    color: var(--color-light);
+}
+
+
+
+.upcoming__headContentLink {
+    text-decoration: none;
+    color: var(--color-gray);
+    font-weight: 700;
+    transition: .2s;
+}
+
+.upcoming__headContentLink:hover {
+    color: var(--color-light);
+}
+
+.upcoming__container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(20rem,1fr));
+    grid-column-gap: 8rem;
+}

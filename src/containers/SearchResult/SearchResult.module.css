@@ -1,0 +1,22 @@
+.searchResult {
+    background-color: #1D1D1D;
+    padding: 0 9rem;
+
+    
+}
+
+.searchResult__heading {
+    font-size: 4.5rem;
+    color: var(--color-green);
+    text-align: center;
+    padding: 3rem 0;
+    border-bottom: 1px solid rgb(82, 76, 76);
+    
+}
+
+.searchResult__container {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-gap: 6rem;
+    padding: 4rem 0;
+}
