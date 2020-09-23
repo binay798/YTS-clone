@@ -7,10 +7,10 @@
     grid-template-columns: 1fr 1.5fr 1fr;
     grid-column-gap: 8rem;
     padding: 4rem 9rem;
-    background-image: linear-gradient(to bottom,
+    /* background-image: linear-gradient(to bottom,
         rgba(43, 40, 40, 0.822),
         rgba(36, 29, 29, 0.897)),
-        url(../../assets/images/hero.jpg);
+        url(../../assets/images/hero.jpg); */
     /* filter: blur(10px); */
     background-repeat: no-repeat;
     background-position: center;
@@ -76,10 +76,14 @@
     border: 1px solid rgba(255,255,255,.16);
     border-radius: 3px;
     padding: 2px 10px;
-    color: var(--color-light);
+    color: var(--color-gray);
     font-size: 1.4rem;
     transition: .2s;
     margin-right: 1rem;
+}
+
+.movieResult__availabilityContainerLink:hover {
+    color: var(--color-light);
 }
 
 .movieResult__star {
@@ -108,4 +112,73 @@
 .movieResult__techSpecs {
     background-color: #1D1D1D;
     padding: 4rem 9rem;
+}
+
+/* popup section */
+.movieResult__popup {
+
+}
+.movieResult__popup > h2 {
+    text-align: center;
+    font-weight: 700;
+    color: var(--color-green);
+    margin-bottom: 4rem;
+}
+.movieResult__popupContainer {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    
+}
+.movieResult__popupContainer > div > p {
+    text-align: center;
+}
+
+.movieResult__popupContainer > div > * {
+    margin-bottom: 1rem;
+}
+
+.movieResult__popupLeft {
+    border-right: 1px solid var(--color-green);
+    padding: 0  2rem;
+    text-align: center;
+}
+
+.movieResult__popupRight {
+    padding: 0 2rem;
+    text-align: center;
+
+}
+.movieResult__popupTvSmall {
+    position: relative;
+}
+.movieResult__popupTvSmall img{
+    display: block;
+    height: 10rem;
+    margin: 0 auto;
+}
+
+.movieResult__popupTvSmall > h2 {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    color: #dbdbdb;
+}
+
+.movieResult__popupTvLarge {
+    position: relative;
+}
+
+.movieResult__popupTvLarge img{
+    display: block;
+    height: 10rem;
+    margin: 0 auto;
+}
+
+.movieResult__popupTvLarge > h2 {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    color: #dbdbdb;
 }

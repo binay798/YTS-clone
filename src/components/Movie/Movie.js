@@ -4,10 +4,15 @@ import movieImg from '../../assets/images/extraction.jpg';
 import Button from '../UI/Button/Button';
 import star from '../../assets/images/star.svg';
 import { withRouter } from 'react-router-dom';
+import { connect } from 'react-redux';
+import {getSingleMovie as actionCreators} from '../../store/actions/getSingleMovie';
+
+
 function Movie(props) {
     
     const nextpage = () => {
         props.history.push('/result')
+        props.getMovieDetail(props.movie.id)
     }
     return (
         <>
@@ -30,4 +35,10 @@ function Movie(props) {
     )
 }
 
-export default withRouter(Movie);
+const mapDispatchToProps = dispatch => {
+    return {
+        getMovieDetail: (id) => dispatch(actionCreators(id))
+    }
+}
+
+export default connect(null,mapDispatchToProps)(withRouter(Movie));

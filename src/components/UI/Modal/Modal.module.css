@@ -1,0 +1,14 @@
+.modal {
+    
+    padding: 4rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    min-width: 50vw;
+    border-radius: 4px;
+    z-index: 2000;
+    /* transition: .3s; */
+}
+
+

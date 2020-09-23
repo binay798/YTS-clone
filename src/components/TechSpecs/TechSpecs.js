@@ -2,15 +2,28 @@ import React from 'react'
 import classes from './TechSpecs.module.css';
 import Spec from './Spec/Spec';
 
-function TechSpecs() {
-
-    const [current,setCurrent] = React.useState('small');
-    if(current && setCurrent) {
-
+function displayTime(time) {
+    let hour = Math.floor(time / 60);
+    let min = time % 60;
+    if(time === 0) {
+        return "1 hr"
     }
-    const [spec,setSpec] = React.useState({
+    
+    return `${hour} hr ${min} min`
+}
+
+function TechSpecs(props) {
+    let techSpec = null;
+    
+    let allSpecs = [...props.spec].slice(0,2);
+    
+    
+    
+    const [current,setCurrent] = React.useState('first');
+
+    techSpec = {
         size:{
-            main:"990.22 MB",
+            main:current === 'first' ? allSpecs[0].size : allSpecs[1].size ,
             icon: "icon-folder-open"
         },
         res: {
@@ -18,11 +31,11 @@ function TechSpecs() {
             icon: "icon-enlarge"
         },
         lang: {
-            main: "English 2.0",
+            main: props.lang,
             icon: "icon-volume-medium"
         },
         view: {
-            main: "NR",
+            main: props.mpa || "NR",
             icon: "icon-eye"
         },
         cc:{
@@ -34,31 +47,34 @@ function TechSpecs() {
             icon: "icon-film"
         },
         time: {
-            main: "1hr 47 min",
+            main: displayTime(props.duration),
             icon: "icon-clock"
         },
         total: {
             main: "895 / 1,462",
             icon: "icon-folder-open"
         }
-    });
-
-    if(setSpec) {
-
     }
 
     let arr = [];
 
-    for(let i in spec) {
-        arr.push(<Spec key={i} content={spec[i].main} icon={spec[i].icon} />)
+    for(let i in techSpec) {
+        arr.push(<Spec key={i} content={techSpec[i].main} icon={techSpec[i].icon} />)
     }
+
+    const changeActiveStatus = (data) => {
+        setCurrent(data)
+    }
+
+    
+    
     return (
         <div className={classes.techSpecs}>
             <div className={classes.techSpecs__header}>
                 <h3>Tech specs</h3>
                 <div>
-                    <p className={classes.active}>720.WEB</p>
-                    <p>1080.WEB</p>
+                    <p className={current === 'first' ? classes.active: null} onClick={() => changeActiveStatus('first')}>720.WEB</p>
+                    <p className={current === 'second' ? classes.active: null} onClick={() => changeActiveStatus('second')}>1080.WEB</p>
                 </div>
             </div>
             <div className={classes.techSpecs__container}>

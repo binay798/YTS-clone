@@ -5,5 +5,5 @@ import wifi from './wifi.png';
 import yts from './yts-logo.svg';
 import heart from './heart.svg';
 import imdb from './imdb.svg'
-
-export {hero,extraction,star,wifi,yts,heart,imdb}
+import tv from './tv.svg';
+export {hero,extraction,star,wifi,yts,heart,imdb,tv}
