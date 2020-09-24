@@ -11,6 +11,7 @@ import {getSingleMovie as actionCreators} from '../../store/actions/getSingleMov
 function Movie(props) {
     
     const nextpage = () => {
+        window.document.title = props.movie.title
         props.history.push('/result')
         props.getMovieDetail(props.movie.id)
     }

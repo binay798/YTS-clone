@@ -12,6 +12,7 @@ import { getAllMovies as actionCreators } from '../../store/actions/getAllMovies
 class Homepage extends React.Component {
 
     componentDidMount() {
+        window.document.title = "The Official Home of YIFY movies";
         if(this.props.allMovies.movies.length === 0) {
             this.props.getMovies()
 

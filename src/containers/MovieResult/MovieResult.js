@@ -1,14 +1,15 @@
 import React from 'react';
 import classes from './MovieResult.module.css';
+import MovieTertiary from '../../components/Movie/MovieTertiary/MovieTertiary';
 import MovieSecondary from '../../components/Movie/MovieSecondary/MovieSecondary';
+
 import Button from '../../components/UI/Button/Button';
 import {heart,imdb,star} from '../../assets/images/images';
 import TechSpecs from '../../components/TechSpecs/TechSpecs';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
 import Modal from '../../components/UI/Modal/Modal';
 import Backdrop from '../../components/UI/Backdrop/Backdrop';
-import { tv } from '../../assets/images/images';
+import { tv,cross } from '../../assets/images/images';
 
 
 class MovieResult extends React.Component {
@@ -19,22 +20,36 @@ class MovieResult extends React.Component {
     
 
     render() {
+        // set the href to the torrent url
+        const clickedToLink = (url) => {
+            window.location.href = url;
+            this.setState({showModal: false})
+        }
+        // scroll to top of the page
+        window.scrollTo(0,0);
         // Current Selected movie
+        
         let movie = this.props.selectedMovie.currentMovie;
         // while movie is in fetching mode from the server then displayMovieDetails is set to loading
         let displayMovieDetails = (<div style={{height: "100vh", color:'#fff',backgroundColor: "var(--color-dark)",fontSize:"2.5rem",textAlign:"center"}}>Loading...</div>);
-
-
+        
+        const suggestedMovies = this.props.selectedMovie.suggestedMovies
         if(movie !== null) {
+            
             // list of genre of selected movie
+
             let genres = movie.genres;
             
             genres = genres.map(item => {
                 return (<span key={item}> {item} /</span>)
             })
 
+            
+            
+
             let quality = movie.torrents.map((item,id) => {
-                return (<Link key={id} to='/' className={classes.movieResult__availabilityContainerLink} >{item.quality}</Link>)
+                
+                return (<p key={id}  onClick={() => clickedToLink(item.url)} className={classes.movieResult__availabilityContainerLink} >{item.quality}</p>)
             })
             
             
@@ -74,11 +89,10 @@ class MovieResult extends React.Component {
                         
                     </div>
                     <div className={classes.movieResult__similar}>
-                        <MovieSecondary />
-                        <MovieSecondary />
-                        <MovieSecondary />
-                        <MovieSecondary />
-
+                        
+                        {suggestedMovies.map((movie,id) => {
+                            return (<MovieTertiary key={id} name={movie.title} img={movie.medium_cover_image} id={movie.id} />)
+                        })}
                     </div>
                 </div>
 
@@ -102,6 +116,7 @@ class MovieResult extends React.Component {
                 {displayMovieDetails}
                 <Modal show={this.state.showModal} >
                     <div className={classes.movieResult__popup}>
+                        <img onClick={() => this.setState({showModal: false})} src={cross} className={classes.movieResult__popupCross} alt="cross"/>
                         <h2>Select movie quality</h2>
                         <div className={classes.movieResult__popupContainer}>
                             <div className={classes.movieResult__popupLeft}>
@@ -112,8 +127,8 @@ class MovieResult extends React.Component {
                                 
                                 <h4>BluRay</h4>
                                 <p>File Size</p>
-                                <h4>896.66 MB</h4>
-                                <Button>Download</Button>
+                                <h4>{movie?.torrents[0].size}</h4>
+                                <Button clicked={() => clickedToLink(movie?.torrents[0].url)}>Download</Button>
                             </div>
 
                             <div className={classes.movieResult__popupRight}>
@@ -123,8 +138,8 @@ class MovieResult extends React.Component {
                                 </div>
                                 <h4>BluRay</h4>
                                 <p>File Size</p>
-                                <h4>896.66 MB</h4>
-                                <Button>Download</Button>
+                                <h4>{movie?.torrents[1].size}</h4>
+                                <Button clicked={() => clickedToLink(movie?.torrents[1].url)}>Download</Button>
                             </div>
                         </div>
                     </div>

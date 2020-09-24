@@ -6,4 +6,5 @@ import yts from './yts-logo.svg';
 import heart from './heart.svg';
 import imdb from './imdb.svg'
 import tv from './tv.svg';
-export {hero,extraction,star,wifi,yts,heart,imdb,tv}
+import cross from './cross.svg';
+export {hero,extraction,star,wifi,yts,heart,imdb,tv,cross}

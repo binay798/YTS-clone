@@ -80,6 +80,7 @@
     font-size: 1.4rem;
     transition: .2s;
     margin-right: 1rem;
+    cursor: pointer;
 }
 
 .movieResult__availabilityContainerLink:hover {
@@ -116,7 +117,7 @@
 
 /* popup section */
 .movieResult__popup {
-
+    position: relative;
 }
 .movieResult__popup > h2 {
     text-align: center;
@@ -181,4 +182,14 @@
     left: 50%;
     transform: translate(-50%,-50%);
     color: #dbdbdb;
+}
+
+.movieResult__popupCross {
+    display: block;
+    width: 2rem;
+    height: 2rem;
+    position: absolute;
+    top: -2rem;
+    right: -2rem;
+    cursor: pointer;
 }
