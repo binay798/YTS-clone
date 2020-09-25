@@ -1,0 +1,22 @@
+.ham {
+    width: 3rem;
+    height: 3px;
+    background-color: white;
+    position: relative;
+}
+
+.ham::after,.ham::before {
+    content: "";
+    display: block;
+    width: 3rem;
+    height: 3px;
+    background-color: white;
+    position: absolute;
+}
+
+.ham::after {
+    bottom: .7rem;
+}
+.ham::before {
+    top: .7rem;
+}

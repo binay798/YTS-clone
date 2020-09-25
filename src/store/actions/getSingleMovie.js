@@ -15,12 +15,12 @@ export const getSingleMovie = (id) => {
                     let [movie,movieSuggestion] = values;
                     movie = movie.data.data;
                     dispatch({type:actions.GET_SINGLE_MOVIE,value: {movie:movie,suggestedMovie: movieSuggestion}});
-                    dispatch({type: actions.GET_MOVIES_SUCCESS});
+                    dispatch({type: actions.GET_SINGLE_MOVIE_SUCCESS});
 
                 })
                 .catch(err => {
                     console.log(err);
-                    dispatch({type: actions.GET_MOVIES_ERROR});
+                    dispatch({type: actions.GET_SINGLE_MOVIE_ERROR,value:err.message});
                 })
     }
 }

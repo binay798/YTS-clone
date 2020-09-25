@@ -10,6 +10,7 @@
     font-size: 1.6rem;
     cursor: pointer;
     transition: .3s;
+    outline: none;
 }
 
 .btn:hover {

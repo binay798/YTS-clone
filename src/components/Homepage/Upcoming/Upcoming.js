@@ -2,13 +2,15 @@ import React from 'react'
 import Movie from '../../Movie/Movie';
 import classes from './Upcoming.module.css';
 import { connect } from 'react-redux';
+import Loader from '../../UI/Loader/Loader';
 
 
 
 function Upcoming(props) {
 
-    let displayMovies = (<div style={{color:'#fff',fontSize:"2.5rem",textAlign:"center"}}>Loading...</div>);
-    if(props.homepageMovies.length !== 0) {
+    // let displayMovies = (<div style={{color:'#fff',fontSize:"2.5rem",textAlign:"center"}}>Loading...</div>);
+    let displayMovies = (<Loader />)
+    if(!props.allMovies.loading) {
 
         displayMovies = props.homepageMovies.map((item,id) => {
                             return (<Movie key={id} movie={item} />)

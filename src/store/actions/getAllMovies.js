@@ -13,8 +13,7 @@ export const getAllMovies = () => {
                 dispatch({type: actions.INITIALIZE_HOMEPAGE_MOVIES,value: movies})
             })
             .catch(err => {
-                console.log(err)
-                dispatch({type: actions.GET_MOVIES_ERROR});
+                dispatch({type: actions.GET_MOVIES_ERROR,value: err.message});
 
             })
     }

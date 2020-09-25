@@ -3,7 +3,10 @@ import classes from './BrowseMovies.module.css';
 import Search from '../../components/Search/Search';
 import Movie from '../../components/Movie/Movie';
 import { connect } from 'react-redux';
-import { getAllMovies as actionCreators } from '../../store/actions/getAllMovies';
+import  * as actionCreators  from '../../store/actions/getAllMovies';
+
+
+
 class BrowseMovies extends React.Component {
 
     componentDidMount() {
@@ -48,7 +51,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        getMovies: () => dispatch(actionCreators())
+        getMovies: () => dispatch(actionCreators.getAllMovies())
     }
 }
 

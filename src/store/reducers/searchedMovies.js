@@ -1,36 +1,28 @@
 import * as actions from '../actions/actions';
 
 const initialState = {
-    currentMovie: null,
+    searchedMovies:null,
     loading: false,
-    suggestedMovies:null,
     error: null
 }
 
 const reducer = (state=initialState,action) => {
-
+    
     switch(action.type) {
-        case actions.GET_SINGLE_MOVIE:
-            let suggested = action.value.suggestedMovie.data.data.movies;
+        case actions.GET_SEARCH_START:
             return {
                 ...state,
-                currentMovie: {...action.value.movie.movie},
-                suggestedMovies: [...suggested]
-                
-            };
-        case actions.GET_SINGLE_MOVIE_START:
-            return {
-                ...state,
-                currentMovie: action.value,
+                searchedMovies: null,
                 loading: true,
                 error: null
             }
-        case actions.GET_SINGLE_MOVIE_SUCCESS:
+        case actions.GET_SEARCH_SUCCESS:
             return {
                 ...state,
+                searchedMovies: [...action.value],
                 loading: false
             }
-        case actions.GET_SINGLE_MOVIE_ERROR:
+        case actions.GET_SEARCH_ERROR:
             return {
                 ...state,
                 loading: false,
@@ -40,5 +32,4 @@ const reducer = (state=initialState,action) => {
             return state;
     }
 }
-
 export default reducer;

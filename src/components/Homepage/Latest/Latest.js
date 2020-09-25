@@ -3,15 +3,16 @@ import { Link } from 'react-router-dom';
 import Movie from '../../Movie/Movie';
 import classes from './Latest.module.css';
 import { connect } from 'react-redux';
-
+import Loader from '../../UI/Loader/Loader';
 
 function Latest(props) {
 
-    let displayMovies = (<div style={{color:'#fff',fontSize:"2.5rem",textAlign:"center"}}>Loading...</div>);
-    if(props.homepageMovies.length !== 0) {
+    // let displayMovies = (<div style={{color:'#fff',fontSize:"2.5rem",textAlign:"center"}}>Loading...</div>);
+    let displayMovies = (<Loader />)
+    if(!props.allMovies.loading) {
 
         displayMovies = props.homepageMovies.map((item,id) => {
-                            return (<Movie key={id} movie={item} />)
+                            return (<Movie  key={id} movie={item} />)
                         })
     }
 

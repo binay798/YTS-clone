@@ -7,4 +7,5 @@ import heart from './heart.svg';
 import imdb from './imdb.svg'
 import tv from './tv.svg';
 import cross from './cross.svg';
-export {hero,extraction,star,wifi,yts,heart,imdb,tv,cross}
+import search from './search.svg';
+export {hero,extraction,star,wifi,yts,heart,imdb,tv,cross,search}

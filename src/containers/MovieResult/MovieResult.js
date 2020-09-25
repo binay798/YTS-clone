@@ -10,6 +10,7 @@ import { connect } from 'react-redux';
 import Modal from '../../components/UI/Modal/Modal';
 import Backdrop from '../../components/UI/Backdrop/Backdrop';
 import { tv,cross } from '../../assets/images/images';
+import Loader from '../../components/UI/Loader/Loader';
 
 
 class MovieResult extends React.Component {
@@ -31,14 +32,15 @@ class MovieResult extends React.Component {
         
         let movie = this.props.selectedMovie.currentMovie;
         // while movie is in fetching mode from the server then displayMovieDetails is set to loading
-        let displayMovieDetails = (<div style={{height: "100vh", color:'#fff',backgroundColor: "var(--color-dark)",fontSize:"2.5rem",textAlign:"center"}}>Loading...</div>);
-        
+        // let displayMovieDetails = (<div style={{height: "100vh", color:'#fff',backgroundColor: "var(--color-dark)",fontSize:"2.5rem",textAlign:"center"}}>Loading...</div>);
+        let displayMovieDetails = (<div className={classes.Loader}><Loader /></div>)
         const suggestedMovies = this.props.selectedMovie.suggestedMovies
-        if(movie !== null) {
+        
+        if(!this.props.selectedMovie.loading && movie !== null) {
             
             // list of genre of selected movie
 
-            let genres = movie.genres;
+            let genres = movie?.genres;
             
             genres = genres.map(item => {
                 return (<span key={item}> {item} /</span>)
@@ -105,6 +107,8 @@ class MovieResult extends React.Component {
         }
 
         
+
+        
         
         return (
             <div 
@@ -138,7 +142,7 @@ class MovieResult extends React.Component {
                                 </div>
                                 <h4>BluRay</h4>
                                 <p>File Size</p>
-                                <h4>{movie?.torrents[1].size}</h4>
+                                <h4>{movie?.torrents[1]?.size}</h4>
                                 <Button clicked={() => clickedToLink(movie?.torrents[1].url)}>Download</Button>
                             </div>
                         </div>

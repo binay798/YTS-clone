@@ -1,0 +1,10 @@
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    
+    height: 100vh;
+    background-color: var(--color-dark);
+    z-index: 5000;
+    transition: .4s;
+}

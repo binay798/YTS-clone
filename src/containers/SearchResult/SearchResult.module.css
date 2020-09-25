@@ -20,3 +20,32 @@
     grid-gap: 6rem;
     padding: 4rem 0;
 }
+
+.Loader {
+    width: 100vw;
+    height: 80vh;
+    background-color: #171717;
+    position: relative;
+}
+.Loader div {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+@media only screen and (max-width: 800px) {
+    .searchResult {
+        padding: 0 4rem;
+    }
+
+    .searchResult__container {
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    .searchResult__container {
+        grid-template-columns: 1fr;
+    }
+}

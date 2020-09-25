@@ -23,7 +23,7 @@ function TechSpecs(props) {
 
     techSpec = {
         size:{
-            main:current === 'first' ? allSpecs[0].size : allSpecs[1].size ,
+            main:current === 'first' ? allSpecs[0]?.size : allSpecs[1]?.size ,
             icon: "icon-folder-open"
         },
         res: {

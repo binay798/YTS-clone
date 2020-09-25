@@ -5,7 +5,12 @@ import Homepage from './containers/Homepage/Homepage';
 import BrowseMovies from './containers/BrowseMovies/BrowseMovies';
 import MovieResult from './containers/MovieResult/MovieResult';
 import SearchResult from './containers/SearchResult/SearchResult';
-function App() {
+import { connect } from 'react-redux';
+
+
+function App(props) {
+
+  
   
   return (
     <Layout>
@@ -23,4 +28,12 @@ function App() {
   );
 }
 
-export default App;
+const mapStateToProps = state => {
+  return {
+    all: state.allMovies,
+    single: state.singleMovie,
+    searched: state.searchedMovies
+  }
+}
+
+export default connect(mapStateToProps)(App);

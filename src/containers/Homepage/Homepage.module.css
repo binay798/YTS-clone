@@ -1,5 +1,6 @@
 .homepage {
     /* padding: 4rem 0; */
+    position: relative;
 }
 
 
@@ -11,6 +12,7 @@
     font-size: 4.5rem;
     padding: 4rem 0 0;
 }
+
 .homepage__popular {
     
     background-image: linear-gradient(to bottom,rgba(43, 40, 40, 0.95),rgb(36, 29, 29)),url(../../assets/images/hero.jpg);
@@ -95,4 +97,33 @@
     background-color: #1D1D1D;
     padding: 4rem 9rem;
 
+}
+
+
+
+@media only screen and (max-width: 800px) {
+    .homepage__heading {
+        display: none;
+    }
+    .homepage__popular > p {
+        display: none;
+    }
+
+    .homepage__popular  a {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    .homepage__popular {
+        padding: 4rem 2rem;
+    }
+
+    .homepage__latest {
+        padding: 4rem 2rem;
+    }
+
+    .homepage__upcoming {
+        padding: 4rem 2rem;
+    }
 }

@@ -9,7 +9,12 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { getAllMovies as actionCreators } from '../../store/actions/getAllMovies';
 
+
 class Homepage extends React.Component {
+
+    state = {
+        showModal: false
+    }
 
     componentDidMount() {
         window.document.title = "The Official Home of YIFY movies";
@@ -18,6 +23,8 @@ class Homepage extends React.Component {
 
         }        
     }
+
+    
 
     render() {
         
@@ -78,7 +85,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        getMovies: () => dispatch(actionCreators())
+        getMovies: () => dispatch(actionCreators()),
+        resetError: () => dispatch({type: 'GET_MOVIES_ERROR',value: null})
     }
 }
 
