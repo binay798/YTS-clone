@@ -3,6 +3,7 @@
     height: 3px;
     background-color: white;
     position: relative;
+    display: none;
 }
 
 .ham::after,.ham::before {
@@ -19,4 +20,10 @@
 }
 .ham::before {
     top: .7rem;
+}
+
+@media only screen and (max-width: 800px) {
+    .ham {
+        display: block;
+    }
 }

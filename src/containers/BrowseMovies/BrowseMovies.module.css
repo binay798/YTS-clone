@@ -30,3 +30,18 @@
     grid-template-columns: repeat(auto-fit,minmax(18rem,1fr));
     grid-gap: 6rem;
 }
+
+@media only screen and (max-width: 800px) {
+    .browse__search {
+        padding: 3rem;
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    .browse__search {
+        padding: 3rem 1rem;
+    }
+    .browse__movies {
+        padding: 3rem 2rem;
+    }
+}

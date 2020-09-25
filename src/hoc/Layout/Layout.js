@@ -15,7 +15,7 @@ function Layout({children}) {
     return (
         <div className={classes.layout}>
             <Header show={showSidebar} handleSidebar={toggleSidebar} />
-            <Sidebar show={showSidebar} />
+            <Sidebar show={showSidebar} handleSidebar={toggleSidebar} />
             <Backdrop show={showSidebar} clicked={toggleSidebar} />
             {children}
             <Footer />

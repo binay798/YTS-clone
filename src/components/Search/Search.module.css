@@ -17,7 +17,7 @@
 }
 
 .search__form > div:first-child {
-    grid-column: 1 / span 6;
+    grid-column: 1 / -2;
     color: #5a5a5a;
 }
 
@@ -43,6 +43,7 @@ input {
 .search__form > div:last-child > button {
     padding-top: 1rem;
     padding-bottom: 1rem; 
+    width: 100%;
 }
 .search__input {
     display: block;
@@ -53,4 +54,29 @@ input {
     background-color: #282828;
     border-radius: 3px;
     
+}
+
+
+@media only screen and (max-width: 800px) {
+    .search__form {
+        /* grid-template-columns: 1fr; */
+        /* grid-template-rows: repeat(2,1fr); */
+
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    .search__form > div {
+        flex-basis: 40%;
+    }
+    
+
+    .search__form > div:first-child {
+        flex-basis: 100%;
+    }
+
+    .search__form > div:last-child {
+        flex-basis: 100%;
+    }
 }

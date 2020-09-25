@@ -21,7 +21,7 @@
 .movieResult__container > div {
     /* background-color: coral; */
     height: 40rem;
-    
+    width: 100%;
 } 
 
 .movieResult__similar {
